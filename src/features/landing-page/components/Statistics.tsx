@@ -5,10 +5,10 @@ import CountUp from "react-countup";
 import SectionTitle from "@/features/landing-page/components/SectionTitle";
 
 const statistics = [
-  { name: "ACTIVE AFFILIATES", value: 1200 },
-  { name: "BRANDS ON PLATFORM", value: 85 },
-  { name: "COMMISSION PAID OUT", value: 450000 },
-  { name: "CAMPAIGNS RUN", value: 950 },
+  { name: "ACTIVE LEARNERS", value: 3200 },
+  { name: "TREES PLANTED", value: 75000 },
+  { name: "BADGES EARNED", value: 4800 },
+  { name: "LESSONS COMPLETED", value: 12000 },
 ];
 
 const Statistics = () => {

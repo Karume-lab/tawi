@@ -1,12 +1,12 @@
 import { Stack } from "@mantine/core";
 import {
   Faqs,
-  FindYourFit,
-  GetInTouchWithUs,
+  GetInTouch,
   HeroSection,
+  MissionVision,
   Partners,
   Statistics,
-  TheTeam,
+  TheCreator,
 } from "@/features/landing-page";
 
 const LandingPage = () => {
@@ -15,10 +15,10 @@ const LandingPage = () => {
       <HeroSection />
       <Statistics />
       <Partners />
-      <FindYourFit />
+      <MissionVision />
       <Faqs />
-      <TheTeam />
-      <GetInTouchWithUs />
+      <TheCreator />
+      <GetInTouch />
     </Stack>
   );
 };

@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SharaHub",
-  description: "An affiliate marketing platform like no other!",
+  title: "Tawi",
+  description: "Train Like a Ninja, Grow Like a Forest.",
 };
 
 interface RootLayoutProps

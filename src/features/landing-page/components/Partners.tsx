@@ -1,46 +1,25 @@
 import { Marquee } from "@gfazioli/mantine-marquee";
-import { Box, ThemeIcon } from "@mantine/core";
+import { Box, ThemeIcon, Tooltip } from "@mantine/core";
 import {
-  IconBrand4chan,
-  IconBrandAmazon,
-  IconBrandBing,
-  IconBrandGithub,
-  IconBrandMantine,
-  IconBrandWhatsapp,
-  IconBrandWordpress,
+  IconFlower,
+  IconLeaf,
+  IconPlant,
+  IconSeedling,
+  IconSun,
+  IconTree,
+  IconTrees,
 } from "@tabler/icons-react";
 import styles from "#/partners.module.css";
 import SectionTitle from "@/features/landing-page/components/SectionTitle";
 
 const partners = [
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrand4chan,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandWhatsapp,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandWordpress,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandBing,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandGithub,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandMantine,
-  },
-  {
-    uuid: crypto.randomUUID(),
-    Icon: IconBrandAmazon,
-  },
+  { uuid: crypto.randomUUID(), name: "Tree Co.", Icon: IconTree },
+  { uuid: crypto.randomUUID(), name: "Leaf Org", Icon: IconLeaf },
+  { uuid: crypto.randomUUID(), name: "Plant Foundation", Icon: IconPlant },
+  { uuid: crypto.randomUUID(), name: "Seedling Group", Icon: IconSeedling },
+  { uuid: crypto.randomUUID(), name: "Flower Initiative", Icon: IconFlower },
+  { uuid: crypto.randomUUID(), name: "Sun Alliance", Icon: IconSun },
+  { uuid: crypto.randomUUID(), name: "Forest Network", Icon: IconTrees },
 ];
 
 const Partners = () => {
@@ -48,22 +27,30 @@ const Partners = () => {
     <Box id="partners">
       <Box px={{ base: "md", sm: "lg", md: 80, lg: 120 }} py="xl">
         <SectionTitle
-          title="PARTNERS"
-          description="We team up with brands that care about results and relationships."
+          title="OUR FOREST PARTNERS"
+          description="We team up with organizations that care about trees, forests, and the planet."
         />
       </Box>
 
       <Box mt="lg" px={{ base: "sm", sm: "lg", md: 80 }}>
         <Marquee pauseOnHover fadeEdges repeat={4}>
           {partners.map((partner) => (
-            <ThemeIcon
+            <Tooltip
               key={partner.uuid}
-              variant="transparent"
-              className={styles.iconResponsive}
-              mx="md"
+              label={partner.name}
+              withArrow
+              position="top"
             >
-              <partner.Icon style={{ width: "70%", height: "70%" }} />
-            </ThemeIcon>
+              <ThemeIcon
+                variant="transparent"
+                className={styles.iconResponsive}
+                mx="md"
+                size={60}
+                radius="md"
+              >
+                <partner.Icon style={{ width: "70%", height: "70%" }} />
+              </ThemeIcon>
+            </Tooltip>
           ))}
         </Marquee>
       </Box>

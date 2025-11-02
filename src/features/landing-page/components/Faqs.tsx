@@ -5,33 +5,70 @@ import {
   AccordionPanel,
   Box,
   Container,
+  ScrollArea,
 } from "@mantine/core";
 import SectionTitle from "@/features/landing-page/components/SectionTitle";
 
 const faqs = [
   {
-    value: "Who can join as an affiliate?",
+    value: "Who can join Tawi?",
     description:
-      "Anyone with an audience, content platform, or marketing skills can sign up and start promoting brands.",
-    emoji: "🧑‍💻",
+      "Anyone passionate about learning and protecting the environment can join. Just sign up and start completing lessons to earn points and badges.",
+    emoji: "🌱",
   },
   {
-    value: "How do brands track performance?",
+    value: "How do I earn points and badges?",
     description:
-      "Our system provides real-time analytics for clicks, conversions, and campaign performance via your dashboard.",
-    emoji: "📊",
+      "You earn points (Matawi) by completing lessons, maintaining streaks, referring friends, and participating in challenges. Badges are awarded for milestones and achievements.",
+    emoji: "🏅",
   },
   {
-    value: "Is there a cost to join?",
+    value: "Are the lessons free?",
     description:
-      "Signing up is free for both affiliates and businesses. You only pay or earn based on campaign performance.",
-    emoji: "💸",
+      "Yes! All lessons on climate conservation, tree care, and environmental stewardship are completely free to access.",
+    emoji: "📚",
   },
   {
-    value: "When do affiliates get paid?",
+    value: "How do my actions help real forests?",
     description:
-      "Payouts are processed based on the brand's payment schedule — usually weekly or monthly, via Mpesa or bank.",
-    emoji: "⏰",
+      "Your engagement translates into real-world impact through Tawi's partner tree-planting initiatives and conservation projects.",
+    emoji: "🌳",
+  },
+  {
+    value: "Can I track my progress?",
+    description:
+      "Yes, your dashboard shows XP, streaks, badges, and forest growth based on your completed lessons and activities.",
+    emoji: "📈",
+  },
+  {
+    value: "What are Matawi?",
+    description:
+      "Matawi are the points you earn by completing lessons, streaks, and referrals. You can redeem them for rewards and track your ranking among friends.",
+    emoji: "💰",
+  },
+  {
+    value: "How do referrals work?",
+    description:
+      "Invite friends with your unique referral link. Both you and your friends earn XP and bonus streaks when they join and complete lessons.",
+    emoji: "🔗",
+  },
+  {
+    value: "Are there different lesson types?",
+    description:
+      "Yes, lessons can be quizzes, videos, or reading exercises, all designed to teach about climate conservation and tree care.",
+    emoji: "🎓",
+  },
+  {
+    value: "Can I see my friends' progress?",
+    description:
+      "Yes, you can view your friends’ XP, streaks, and badges on their profiles to foster healthy competition and collaboration.",
+    emoji: "👥",
+  },
+  {
+    value: "Is Tawi mobile-friendly?",
+    description:
+      "Absolutely. Tawi is designed to work on desktop and mobile devices, so you can learn and grow your forest anywhere.",
+    emoji: "📱",
   },
 ];
 
@@ -41,18 +78,21 @@ const Faqs = () => {
       <Container size="lg">
         <SectionTitle
           title="FAQS"
-          description="Got questions? We got answers!"
+          description="Got questions about Tawi? We have the answers!"
         />
-        <Accordion variant="separated" radius="md" mt="lg">
-          {faqs.map((item) => (
-            <AccordionItem key={item.value} value={item.value}>
-              <AccordionControl icon={item.emoji}>
-                {item.value}
-              </AccordionControl>
-              <AccordionPanel c="dimmed">{item.description}</AccordionPanel>
-            </AccordionItem>
-          ))}
-        </Accordion>
+
+        <ScrollArea type="always" h={400}>
+          <Accordion variant="separated" radius="md" mt="lg">
+            {faqs.map((item) => (
+              <AccordionItem key={item.value} value={item.value}>
+                <AccordionControl icon={item.emoji}>
+                  {item.value}
+                </AccordionControl>
+                <AccordionPanel c="dimmed">{item.description}</AccordionPanel>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </ScrollArea>
       </Container>
     </Box>
   );

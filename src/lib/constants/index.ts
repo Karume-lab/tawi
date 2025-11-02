@@ -1,10 +1,10 @@
 import type { Route } from "next";
 
 export const navLinks: { label: string; href: Route }[] = [
-  { label: "The Team", href: "#the-team" },
   { label: "Statistics", href: "#statistics" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Get In Touch With Us", href: "#get-in-touch-with-us" },
+  { label: "The Creator", href: "#the-creator" },
+  { label: "Get In Touch", href: "#get-in-touch" },
 ];
 
 export enum ProfileTypes {
