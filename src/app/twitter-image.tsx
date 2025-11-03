@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { env } from "@/lib/types";
 
 export const size = {
   width: 1200,
@@ -8,7 +7,7 @@ export const size = {
 export const contentType = "image/png";
 
 const openGraphImage = async (): Promise<ImageResponse> => {
-  const logo = `${env.NEXT_PUBLIC_APP_URL}/core/logo.png`;
+  const logo = `${process.env.NEXT_PUBLIC_APP_URL}/core/logo.png`;
 
   return new ImageResponse(
     <div
