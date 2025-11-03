@@ -6,7 +6,7 @@ export const size = {
 };
 export const contentType = "image/png";
 
-const openGraphImage = async (): Promise<ImageResponse> => {
+const twitterImage = async (): Promise<ImageResponse> => {
   const logo = `${process.env.NEXT_PUBLIC_APP_URL}/core/logo.png`;
 
   return new ImageResponse(
@@ -57,4 +57,4 @@ const openGraphImage = async (): Promise<ImageResponse> => {
   );
 };
 
-export default openGraphImage;
+export default twitterImage;
