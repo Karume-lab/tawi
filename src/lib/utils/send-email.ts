@@ -35,7 +35,7 @@ export const sendEmail = async ({
       });
 
     console.log(`✅ Email sent to ${to}: ${info.messageId}`);
-    if (process.env.NODE_ENV === "development") {
+    if (env.NODE_ENV === "development") {
       console.log(`📬 Preview: ${nodemailer.getTestMessageUrl(info)}`);
     }
   } catch (error) {

@@ -7,7 +7,7 @@ const db = drizzle(pool);
 export const main = async () => {
   console.log("🌱 Seeding local Postgres DB...");
 
-  if (process.env.NODE_ENV === "production") {
+  if (env.NODE_ENV === "production") {
     console.log("⚠️ Skipping seed in production");
     return;
   }
