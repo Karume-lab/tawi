@@ -25,14 +25,7 @@ const Statistics = () => {
         mt="xl"
       >
         {statistics.map(({ name, value }) => (
-          <Card
-            key={name}
-            bg="primary"
-            radius="md"
-            p="lg"
-            withBorder
-            shadow="sm"
-          >
+          <Card key={name} bg="primary" p="lg" withBorder shadow="sm">
             <Text size="sm" fw={700} ta="center" c="white" mb="xs">
               {name}
             </Text>

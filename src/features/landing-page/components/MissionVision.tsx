@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Button,
   Card,
   CardSection,
   Group,
@@ -12,7 +11,6 @@ import {
   Title,
 } from "@mantine/core";
 import { IconLeaf, IconWorld } from "@tabler/icons-react";
-import Link from "next/link";
 import SectionTitle from "@/features/landing-page/components/SectionTitle";
 import { getPrimaryColorHexCode } from "@/lib/utils";
 
@@ -24,7 +22,6 @@ const missionVisionContent = [
     description:
       "Tawi turns learning about climate conservation and tree preservation into an engaging, gamified experience. Earn points, unlock badges, and grow your virtual forest while making a real-world impact.",
     cta: "Start Learning",
-    href: "/sign-up",
   },
   {
     icon: IconWorld,
@@ -33,7 +30,6 @@ const missionVisionContent = [
     description:
       "I envision a future where everyone participates in protecting forests and the planet, combining fun, learning, and community action.",
     cta: "Join the Movement",
-    href: "/sign-up",
   },
 ];
 
@@ -74,17 +70,6 @@ const MissionVision = () => {
                 </Text>
               </Stack>
             </CardSection>
-
-            <Group justify="flex-end" mt="md">
-              <Button
-                variant="light"
-                color="primary"
-                component={Link}
-                href={item.cta === "Start Learning" ? "/sign-up" : "/sign-up"}
-              >
-                {item.cta}
-              </Button>
-            </Group>
           </Card>
         ))}
       </SimpleGrid>

@@ -54,7 +54,6 @@ const TheCreator = () => {
                   href="https://github.com/Karume-Lab"
                   target="_blank"
                   rel="noopener noreferrer"
-                  c="dimmed"
                 >
                   <IconBrandGithub size={20} stroke={1.5} />
                 </Anchor>
@@ -62,7 +61,6 @@ const TheCreator = () => {
                   href="https://linkedin.com/in/daniel-karume/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  c="dimmed"
                 >
                   <IconBrandLinkedin size={20} stroke={1.5} />
                 </Anchor>
@@ -70,7 +68,6 @@ const TheCreator = () => {
                   href="https://karume.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  c="dimmed"
                 >
                   <IconWorld size={20} stroke={1.5} />
                 </Anchor>

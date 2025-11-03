@@ -1,4 +1,5 @@
 import Faqs from "@/features/landing-page/components/Faqs";
+import Features from "@/features/landing-page/components/Features";
 import GetInTouch from "@/features/landing-page/components/GetInTouch";
 import HeroSection from "@/features/landing-page/components/HeroSection";
 import LandingPageAppShellWrapper from "@/features/landing-page/components/LandingPageAppShellWrapper";
@@ -12,6 +13,7 @@ import TheCreator from "@/features/landing-page/components/TheCreator";
 
 export {
   Faqs,
+  Features,
   MissionVision,
   GetInTouch,
   HeroSection,

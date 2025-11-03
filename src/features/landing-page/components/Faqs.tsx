@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionControl,
@@ -8,6 +10,7 @@ import {
   ScrollArea,
 } from "@mantine/core";
 import SectionTitle from "@/features/landing-page/components/SectionTitle";
+import { getPrimaryColorHexCode } from "@/lib/utils";
 
 const faqs = [
   {
@@ -81,7 +84,12 @@ const Faqs = () => {
           description="Got questions about Tawi? We have the answers!"
         />
 
-        <ScrollArea type="always" h={400}>
+        <ScrollArea
+          type="always"
+          h={400}
+          p={20}
+          styles={{ thumb: { backgroundColor: getPrimaryColorHexCode() } }}
+        >
           <Accordion variant="separated" radius="md" mt="lg">
             {faqs.map((item) => (
               <AccordionItem key={item.value} value={item.value}>

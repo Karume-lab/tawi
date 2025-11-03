@@ -15,7 +15,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <BackgroundImage
-      src="/landing-page/karura-forest.png"
+      src="/landing-page/karura-forest.avif"
       mt={80}
       h={{ base: 600, sm: 700, md: 800, lg: 800 }}
     >

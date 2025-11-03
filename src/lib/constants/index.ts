@@ -1,6 +1,7 @@
 import type { Route } from "next";
 
 export const navLinks: { label: string; href: Route }[] = [
+  { label: "Features", href: "#features" },
   { label: "Statistics", href: "#statistics" },
   { label: "FAQs", href: "#faqs" },
   { label: "The Creator", href: "#the-creator" },

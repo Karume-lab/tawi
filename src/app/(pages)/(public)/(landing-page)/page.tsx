@@ -1,6 +1,7 @@
 import { Stack } from "@mantine/core";
 import {
   Faqs,
+  Features,
   GetInTouch,
   HeroSection,
   MissionVision,
@@ -13,6 +14,7 @@ const LandingPage = () => {
   return (
     <Stack gap={"lg"}>
       <HeroSection />
+      <Features />
       <Statistics />
       <Partners />
       <MissionVision />
