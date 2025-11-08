@@ -6,7 +6,7 @@ const LandingPageFooter = () => {
     <footer>
       <Box component="footer" py="md" ta="center" bg={"primary.1"}>
         <Text size="sm" c="dimmed">
-          &copy; {dayjs().year()} SharaHub. All rights reserved.
+          &copy; {dayjs().year()} Tawi. All rights reserved.
         </Text>
       </Box>
     </footer>
