@@ -168,7 +168,6 @@ const GetInTouch = () => {
                   key={label}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
-                  c="dimmed"
                 >
                   <Group gap="xs">
                     <Icon color={getPrimaryColorHexCode()} />
