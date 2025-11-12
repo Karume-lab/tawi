@@ -1,4 +1,4 @@
-import { AuthFormWrapper } from "@/features/auth";
+import AuthFormWrapper from "@/features/auth/components/AuthFormWrapper";
 import NewPasswordForm from "@/features/auth/components/NewPasswordForm";
 
 const ResetPasswordTokenPage = () => {

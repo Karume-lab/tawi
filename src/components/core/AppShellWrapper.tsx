@@ -17,8 +17,9 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { SignOutButton, UserAvatar } from "@/features/auth/components";
-import SiteLogo from "./SiteLogo";
+import SiteLogo from "@/components/core/SiteLogo";
+import SignOutButton from "@/features/auth/components/SignOutButton";
+import UserAvatar from "@/features/auth/components/UserAvatar";
 
 interface AppShellWrapperProps extends Readonly<{ children: ReactNode }> {}
 

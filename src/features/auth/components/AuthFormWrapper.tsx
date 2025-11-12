@@ -28,7 +28,7 @@ import type { Route } from "next";
 import Link from "next/link";
 import type React from "react";
 import type { ReactNode } from "react";
-import { SiteLogo } from "@/components";
+import SiteLogo from "@/components/core/SiteLogo";
 
 interface AuthFormWrapperProps {
   title: string;

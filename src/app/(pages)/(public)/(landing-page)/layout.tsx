@@ -1,5 +1,5 @@
 import type React from "react";
-import { LandingPageAppShellWrapper } from "@/features/landing-page";
+import LandingPageAppShellWrapper from "@/features/landing-page/components/LandingPageAppShellWrapper";
 
 interface LandingPageLayoutProps
   extends Readonly<{

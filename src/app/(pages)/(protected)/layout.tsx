@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import type React from "react";
-import { AppShellWrapper } from "@/components";
+import AppShellWrapper from "@/components/core/AppShellWrapper";
 import { auth } from "@/features/auth/utils/auth";
 
 interface ProtectedLayoutProps

@@ -24,7 +24,7 @@ import {
 } from "@tabler/icons-react";
 import { useMutation } from "@tanstack/react-query";
 import { zod4Resolver } from "mantine-form-zod-resolver";
-import { UserAvatar } from "@/features/auth/components";
+import UserAvatar from "@/features/auth/components/UserAvatar";
 import type { Session } from "@/features/auth/types";
 import { authClient } from "@/features/auth/utils/auth-client";
 import {

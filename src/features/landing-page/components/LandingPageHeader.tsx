@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
-import { SiteLogo } from "@/components";
+import SiteLogo from "@/components/core/SiteLogo";
 import { navLinks } from "@/lib/constants";
 
 const LandingPageHeader = () => {
@@ -30,9 +30,9 @@ const LandingPageHeader = () => {
           wrap="nowrap"
           style={{ width: "100%" }}
         >
-          <Link href="/" style={{ textDecoration: "none" }}>
+          <Anchor component={Link} href="/" style={{ textDecoration: "none" }}>
             <SiteLogo />
-          </Link>
+          </Anchor>
 
           <Group
             gap="lg"

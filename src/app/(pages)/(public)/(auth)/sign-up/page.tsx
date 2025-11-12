@@ -1,6 +1,5 @@
-import { AuthFormWrapper, SignUpForm } from "@/features/auth";
-
-export const dynamic = "force-dynamic";
+import AuthFormWrapper from "@/features/auth/components/AuthFormWrapper";
+import SignUpForm from "@/features/auth/components/SignUpForm";
 
 const SignUpPage = () => {
   return (
