@@ -42,7 +42,7 @@ const NotFound = () => {
               order={2}
               ta="center"
               fw={700}
-              c="blue"
+              c="primary"
               fz={{ base: rem(24), sm: rem(32) }}
             >
               404 - Page Not Found
@@ -57,7 +57,7 @@ const NotFound = () => {
               leftSection={<IconArrowNarrowLeft />}
               mt="sm"
               variant="outline"
-              color="blue"
+              color="primary"
             >
               Go Back
             </Button>

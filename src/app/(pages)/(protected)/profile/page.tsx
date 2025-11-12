@@ -1,5 +1,11 @@
+import { ProfileInfoCard } from "@/features/auth";
+
 const ProfilePage = () => {
-  return <div>ProfilePage</div>;
+  return (
+    <div>
+      <ProfileInfoCard />
+    </div>
+  );
 };
 
 export default ProfilePage;

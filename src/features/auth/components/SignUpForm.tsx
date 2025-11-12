@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import { authClient } from "@/features/auth/utils/auth-client";
 import { type SignUpSchema, signUpSchema } from "@/features/auth/validations";
 
-export default function SignUpForm() {
+const SignUpForm = () => {
   const router = useRouter();
 
   const form = useForm<SignUpSchema>({
@@ -29,7 +29,7 @@ export default function SignUpForm() {
       firstName: "",
       lastName: "",
       email: "",
-      phone: "",
+      phoneNumber: "",
       password: "",
       confirmPassword: "",
       agree: false,
@@ -150,4 +150,6 @@ export default function SignUpForm() {
       </Stack>
     </form>
   );
-}
+};
+
+export default SignUpForm;

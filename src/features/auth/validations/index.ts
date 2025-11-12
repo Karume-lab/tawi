@@ -30,7 +30,7 @@ export const signUpSchema = z
     firstName: z.string().min(1, "First name required"),
     lastName: z.string().min(1, "Last name required"),
     email: z.email("Invalid email address"),
-    phone: z.string().optional(),
+    phoneNumber: z.string().optional(),
     agree: z.boolean().refine((val) => val === true, {
       message: "You must agree to continue",
     }),
@@ -45,3 +45,13 @@ export type ResetPasswordSchema = z.infer<typeof resetPasswordSchema>;
 
 export const newPasswordSchema = passwordSchema;
 export type NewPasswordSchema = z.infer<typeof newPasswordSchema>;
+
+export const editProfileInfoSchema = z.object({
+  image: z.string().optional(),
+  firstName: z.string().min(1, "First name required"),
+  lastName: z.string().min(1, "Last name required"),
+  phoneNumber: z.string().optional(),
+  bio: z.string().optional(),
+  dob: z.string().optional(),
+});
+export type EditProfileInfoSchema = z.infer<typeof editProfileInfoSchema>;

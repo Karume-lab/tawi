@@ -7,23 +7,37 @@ import {
   AppShellHeader,
   AppShellMain,
   AppShellNavbar,
-  Avatar,
   Burger,
   Group,
-  Skeleton,
+  NavLink,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { IconLayoutDashboardFilled, IconUserFilled } from "@tabler/icons-react";
+import type { Route } from "next";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { SignOutButton } from "@/features/auth/components";
-import { authClient } from "@/features/auth/utils/auth-client";
+import { SignOutButton, UserAvatar } from "@/features/auth/components";
 import SiteLogo from "./SiteLogo";
 
 interface AppShellWrapperProps extends Readonly<{ children: ReactNode }> {}
 
+const navLinks: { label: string; leftSection: ReactNode; href: Route }[] = [
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    leftSection: <IconLayoutDashboardFilled />,
+  },
+  {
+    label: "Profile",
+    href: "/profile",
+    leftSection: <IconUserFilled />,
+  },
+];
+
 const AppShellWrapper: React.FC<AppShellWrapperProps> = ({ children }) => {
   const [opened, { toggle }] = useDisclosure();
-  const { data: session, isPending } = authClient.useSession();
+  const pathname = usePathname();
 
   return (
     <AppShell
@@ -47,30 +61,22 @@ const AppShellWrapper: React.FC<AppShellWrapperProps> = ({ children }) => {
             </Anchor>
           </Group>
 
-          {isPending ? (
-            <Skeleton height={36} width={36} circle />
-          ) : (
-            <Avatar
-              radius="xl"
-              src={session?.user?.image ?? null}
-              alt={session?.user?.name ?? "User"}
-              color="primary"
-              tt={"uppercase"}
-            >
-              {session?.user?.name
-                ? session.user.name
-                    .split(" ")
-                    .slice(0, 2)
-                    .map((n) => n[0])
-                    .join("")
-                : "?"}
-            </Avatar>
-          )}
+          <UserAvatar size={48} />
         </Group>
       </AppShellHeader>
 
       <AppShellNavbar p="md">
-        Navbar
+        {navLinks.map(({ href, label, leftSection }) => (
+          <NavLink
+            key={href}
+            href={href}
+            component={Link}
+            label={label}
+            leftSection={leftSection}
+            active={href === pathname}
+          />
+        ))}
+
         <SignOutButton />
       </AppShellNavbar>
 

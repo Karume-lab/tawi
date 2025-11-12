@@ -17,6 +17,22 @@ export const auth = betterAuth({
     },
   }),
 
+  user: {
+    additionalFields: {
+      bio: {
+        type: "string",
+        required: false,
+      },
+      dob: {
+        type: "string",
+        required: false,
+      },
+      phoneNumber: {
+        type: "string",
+        required: false,
+      },
+    },
+  },
   emailAndPassword: {
     enabled: true,
 
@@ -41,8 +57,9 @@ export const auth = betterAuth({
 
   session: {
     cookieCache: {
-      enabled: true,
-      maxAge: 5 * 60,
+      // TODO: once implemented file storage, enable this. i have it disabled as a temporary fix* for the large base64 image which cannot be cookie cached.
+      enabled: false,
+      // maxAge: 5 * 60,
     },
   },
 
