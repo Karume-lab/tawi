@@ -14,6 +14,7 @@ import {
 import { DatePickerInput } from "@mantine/dates";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
 import {
   IconCameraFilled,
   IconCandleFilled,
@@ -58,8 +59,24 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
 
   const mutation = useMutation({
     mutationFn: async (values: typeof form.values) => {
-      return authClient.updateUser({
+      return await authClient.updateUser({
         ...values,
+      });
+    },
+    onSuccess: () => {
+      form.resetDirty(form.getValues());
+      notifications.show({
+        title: "Success!",
+        message: "Your profile information has been updated.",
+        color: "green",
+      });
+    },
+    onError: (error) => {
+      notifications.show({
+        title: "Failed to update profile information.",
+        message:
+          error.message ?? "An error occurred while updating your profile.",
+        color: "red",
       });
     },
   });

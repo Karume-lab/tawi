@@ -31,31 +31,26 @@ const SignInForm = () => {
 
   const mutation = useMutation({
     mutationFn: async (values: SignInSchema) => {
-      return await authClient.signIn.email(
-        {
-          email: values.email,
-          password: values.password,
-          callbackURL: "/dashboard",
-        },
-        {
-          onError: (ctx) => {
-            notifications.show({
-              title: "Sign-in failed",
-              message:
-                ctx.error.message || "Invalid credentials, please try again.",
-              color: "red",
-            });
-          },
-          onSuccess: () => {
-            form.reset();
-            notifications.show({
-              title: "Welcome back!",
-              message: "You've signed in successfully.",
-              color: "green",
-            });
-          },
-        },
-      );
+      return await authClient.signIn.email({
+        email: values.email,
+        password: values.password,
+        callbackURL: "/dashboard",
+      });
+    },
+    onSuccess: () => {
+      form.reset();
+      notifications.show({
+        title: "Welcome back!",
+        message: "You've signed in successfully.",
+        color: "green",
+      });
+    },
+    onError: (error) => {
+      notifications.show({
+        title: "Sign-in failed.",
+        message: error.message || "An error occurred while signing you up.",
+        color: "red",
+      });
     },
   });
 

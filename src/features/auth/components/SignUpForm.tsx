@@ -55,10 +55,11 @@ const SignUpForm = () => {
       });
       router.push("/dashboard");
     },
+
     onError: (error) => {
       notifications.show({
-        title: "Sign-up failed",
-        message: error?.message ?? "Something went wrong",
+        title: "Sign-up failed.",
+        message: error.message ?? "An error occurred while signing you up.",
         color: "red",
       });
     },
