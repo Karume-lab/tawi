@@ -5,9 +5,7 @@ import {
   Box,
   Button,
   Checkbox,
-  Group,
   PasswordInput,
-  Select,
   SimpleGrid,
   Stack,
   Text,
@@ -15,18 +13,13 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
-import {
-  IconMailFilled,
-  IconPhoneFilled,
-  IconUserFilled,
-} from "@tabler/icons-react";
+import { IconMailFilled, IconUserFilled } from "@tabler/icons-react";
 import { useMutation } from "@tanstack/react-query";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/features/auth/utils/auth-client";
 import { type SignUpSchema, signUpSchema } from "@/features/auth/validations";
-import type { ComboboxItemWithDescription } from "@/lib/types";
 
 export default function SignUpForm() {
   const router = useRouter();
@@ -39,7 +32,6 @@ export default function SignUpForm() {
       phone: "",
       password: "",
       confirmPassword: "",
-      profileType: "individual",
       agree: false,
     },
     validate: zod4Resolver(signUpSchema),
@@ -51,7 +43,6 @@ export default function SignUpForm() {
         email: values.email,
         password: values.password,
         name: `${values.firstName} ${values.lastName}`,
-        profileType: values.profileType,
         callbackURL: "/dashboard",
       });
     },
@@ -77,25 +68,29 @@ export default function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md" mb="md">
-        <TextInput
-          label="First Name"
-          placeholder="Enter your first name"
-          rightSection={<IconUserFilled size={18} />}
-          withAsterisk
-          disabled={mutation.isPending}
-          c="white"
-          {...form.getInputProps("firstName")}
-        />
-        <TextInput
-          label="Last Name"
-          placeholder="Enter your last name"
-          rightSection={<IconUserFilled size={18} />}
-          withAsterisk
-          disabled={mutation.isPending}
-          c="white"
-          {...form.getInputProps("lastName")}
-        />
+      <Stack px={{ lg: 32, xl: 64 }}>
+        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md">
+          <TextInput
+            label="First Name"
+            placeholder="Enter your first name"
+            rightSection={<IconUserFilled size={18} />}
+            withAsterisk
+            disabled={mutation.isPending}
+            c="white"
+            {...form.getInputProps("firstName")}
+          />
+
+          <TextInput
+            label="Last Name"
+            placeholder="Enter your last name"
+            rightSection={<IconUserFilled size={18} />}
+            withAsterisk
+            disabled={mutation.isPending}
+            c="white"
+            {...form.getInputProps("lastName")}
+          />
+        </SimpleGrid>
+
         <TextInput
           label="Email"
           placeholder="Enter your email"
@@ -105,82 +100,35 @@ export default function SignUpForm() {
           c="white"
           {...form.getInputProps("email")}
         />
-        <TextInput
-          label="Phone Number"
-          placeholder="Enter your phone number"
-          withAsterisk
-          disabled={mutation.isPending}
-          rightSection={<IconPhoneFilled size={18} />}
-          c="white"
-          {...form.getInputProps("phone")}
-        />
-        <PasswordInput
-          label="Password"
-          placeholder="Enter your password"
-          withAsterisk
-          disabled={mutation.isPending}
-          c="white"
-          {...form.getInputProps("password")}
-        />
-        <PasswordInput
-          label="Confirm Password"
-          placeholder="Confirm your password"
-          withAsterisk
-          disabled={mutation.isPending}
-          c="white"
-          {...form.getInputProps("confirmPassword")}
-        />
-      </SimpleGrid>
 
-      <Stack>
-        <Select
-          label="Select profile type"
-          placeholder="Select the type of profile you want"
-          withAsterisk
-          disabled={mutation?.isPending}
-          c="white"
-          data={
-            [
-              {
-                label: "Individual",
-                value: "individual",
-                description:
-                  "Join as an affiliate to find and promote business offers. Ideal for creators, influencers, and freelancers.",
-              },
-              {
-                label: "Business",
-                value: "business",
-                description:
-                  "Create campaigns and recruit affiliates to promote your products or services. Ideal for brands and companies.",
-              },
-            ] as ComboboxItemWithDescription[]
-          }
-          renderOption={({ option }) => {
-            const customOption = option as ComboboxItemWithDescription;
-            return (
-              <Group gap="xs" align="flex-start">
-                <div>
-                  <Text size="sm" fw={500}>
-                    {customOption.label}
-                  </Text>
-                  <Text size="xs" c="dimmed">
-                    {customOption.description}
-                  </Text>
-                </div>
-              </Group>
-            );
-          }}
-          {...form.getInputProps("profileType")}
-        />
+        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md" mb="md">
+          <PasswordInput
+            label="Password"
+            placeholder="Enter your password"
+            withAsterisk
+            disabled={mutation.isPending}
+            c="white"
+            {...form.getInputProps("password")}
+          />
 
-        <Box>
+          <PasswordInput
+            label="Confirm Password"
+            placeholder="Confirm your password"
+            withAsterisk
+            disabled={mutation.isPending}
+            c="white"
+            {...form.getInputProps("confirmPassword")}
+          />
+        </SimpleGrid>
+
+        <Box ta={"start"}>
           <Checkbox
             label="I have read and accept the terms and conditions"
             c="white"
             checked={form.values.agree}
             {...form.getInputProps("agree", { type: "checkbox" })}
           />
-          <Text size="sm" c="white" ta="start" mt={4}>
+          <Text size="sm" c="white">
             By checking this box, you confirm that you have carefully reviewed
             and agree to our{" "}
             <Anchor component={Link} href="/terms">
@@ -189,17 +137,17 @@ export default function SignUpForm() {
             .
           </Text>
         </Box>
-      </Stack>
 
-      <Button
-        type="submit"
-        fullWidth
-        size="md"
-        mt="lg"
-        loading={mutation.isPending}
-      >
-        Sign Up
-      </Button>
+        <Button
+          type="submit"
+          fullWidth
+          size="md"
+          mt="lg"
+          loading={mutation.isPending}
+        >
+          Sign Up
+        </Button>
+      </Stack>
     </form>
   );
 }

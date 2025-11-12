@@ -30,10 +30,7 @@ export const signUpSchema = z
     firstName: z.string().min(1, "First name required"),
     lastName: z.string().min(1, "Last name required"),
     email: z.email("Invalid email address"),
-    phone: z.string().min(8, "Phone number required"),
-    profileType: z
-      .enum(["individual", "business"])
-      .refine((val) => !!val, { message: "Select a profile type" }),
+    phone: z.string().optional(),
     agree: z.boolean().refine((val) => val === true, {
       message: "You must agree to continue",
     }),

@@ -65,7 +65,7 @@ const SignInForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack px={{ lg: 50, xl: 100 }}>
+      <Stack px={{ lg: 32, xl: 64 }}>
         <TextInput
           label="Email"
           placeholder="Enter the email you used to create your account"

@@ -17,14 +17,6 @@ export const auth = betterAuth({
     },
   }),
 
-  user: {
-    additionalFields: {
-      profileType: {
-        type: "string",
-      },
-    },
-  },
-
   emailAndPassword: {
     enabled: true,
 
