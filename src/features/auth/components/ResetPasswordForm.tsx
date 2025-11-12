@@ -58,7 +58,7 @@ const ResetPasswordForm = () => {
             onSubmit={handleSubmit}
             style={{ ...styles, position: "absolute", width: "100%" }}
           >
-            <Stack px={{ lg: 50, xl: 100 }}>
+            <Stack>
               <TextInput
                 label="Email"
                 placeholder="Enter your account email"

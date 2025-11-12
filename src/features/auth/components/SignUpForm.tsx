@@ -68,7 +68,7 @@ export default function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack px={{ lg: 32, xl: 64 }}>
+      <Stack>
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md">
           <TextInput
             label="First Name"

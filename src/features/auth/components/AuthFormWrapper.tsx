@@ -86,7 +86,7 @@ const AuthFormWrapper: React.FC<AuthFormWrapperProps> = ({
           <Divider
             label={<Text c="white">OR {footerActionTitle} WITH EMAIL</Text>}
           /> */}
-          <Box mah={{ lg: "60vh" }} mih={{ lg: 300 }}>
+          <Box mah={{ lg: "60vh" }} mih={{ lg: 300 }} px={{ lg: 32, xl: 64 }}>
             <Form />
           </Box>
         </Stack>
