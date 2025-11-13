@@ -87,7 +87,7 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack px={{ base: 20, md: 40, lg: 80, xl: 200 }} py={20}>
+      <Stack>
         <Group align="flex-start" style={{ width: "100%" }}>
           <Box
             pos="relative"
