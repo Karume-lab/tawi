@@ -20,7 +20,7 @@ const missionVisionContent = [
     title: "Mission",
     headline: "Empower Learners to Take Action",
     description:
-      "Tawi turns learning about climate conservation and tree preservation into an engaging, gamified experience. Earn points, unlock badges, and grow your virtual forest while making a real-world impact.",
+      "Tawi turns learning about climate conservation and forest preservation into an engaging, gamified experience. Earn points, unlock badges, and grow your virtual forest while making a real-world impact.",
     cta: "Start Learning",
   },
   {

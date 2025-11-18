@@ -44,7 +44,7 @@ const Partners = () => {
       <Box px={{ base: "md", sm: "lg", md: 80, lg: 120 }} py="xl">
         <SectionTitle
           title="OUR PARTNERS"
-          description="We team up with organizations that care about trees, forests, and the planet."
+          description="We team up with organizations that care about forests and the planet."
         />
       </Box>
 

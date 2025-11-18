@@ -28,13 +28,13 @@ const faqs = [
   {
     value: "Are the lessons free?",
     description:
-      "Yes! All lessons on climate conservation, tree care, and environmental stewardship are completely free to access.",
+      "Yes! All lessons on climate conservation, forest care, and environmental stewardship are completely free to access.",
     emoji: "📚",
   },
   {
     value: "How do my actions help real forests?",
     description:
-      "Your engagement translates into real-world impact through Tawi's partner tree-planting initiatives and conservation projects.",
+      "Your engagement translates into real-world impact through Tawi's partner forestation initiatives and conservation projects.",
     emoji: "🌳",
   },
   {
@@ -58,7 +58,7 @@ const faqs = [
   {
     value: "Are there different lesson types?",
     description:
-      "Yes, lessons can be quizzes, videos, or reading exercises, all designed to teach about climate conservation and tree care.",
+      "Yes, lessons can be quizzes, videos, or reading exercises, all designed to teach about climate conservation and forest care.",
     emoji: "🎓",
   },
   {

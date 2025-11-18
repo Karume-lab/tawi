@@ -6,7 +6,7 @@ import SectionTitle from "@/features/landing-page/components/SectionTitle";
 
 const statistics = [
   { name: "ACTIVE LEARNERS", value: 3200 },
-  { name: "TREES PLANTED", value: 75000 },
+  { name: "FORESTS PLANTED", value: 75000 },
   { name: "BADGES EARNED", value: 4800 },
   { name: "LESSONS COMPLETED", value: 12000 },
 ];

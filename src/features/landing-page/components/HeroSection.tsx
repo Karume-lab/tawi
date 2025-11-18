@@ -39,7 +39,7 @@ const HeroSection = () => {
             <Text style={{ textAlign: "center" }}>
               Join Tawi, the gamified learning platform that turns every lesson
               into action for the environment. Earn points, unlock badges, and
-              grow your forest while mastering climate conservation and tree
+              grow your forest while mastering climate conservation and forest
               preservation skills.
             </Text>
             <Anchor href="/sign-up" component={Link}>

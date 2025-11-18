@@ -1,3 +1,3 @@
 # Tawi
 
-A gamified LMS web app for learning about tree conservation.
+A gamified LMS web app for learning about forest conservation.
