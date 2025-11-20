@@ -1,13 +1,11 @@
-import { Box, Text } from "@mantine/core";
-import dayjs from "dayjs";
+import { Box } from "@mantine/core";
+import Copyright from "@/components/core/Copyright";
 
 const LandingPageFooter = () => {
   return (
     <footer>
       <Box component="footer" py="md" ta="center" bg={"primary.1"}>
-        <Text size="sm" c="dimmed">
-          &copy; {dayjs().year()} Tawi. All rights reserved.
-        </Text>
+        <Copyright />
       </Box>
     </footer>
   );

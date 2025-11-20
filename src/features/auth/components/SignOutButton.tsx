@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@mantine/core";
+import { IconLogout } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/features/auth/utils/auth-client";
 
@@ -17,7 +18,11 @@ const SignOutButton = () => {
   };
 
   return (
-    <Button onClick={handleSignOut} color="gray" variant="subtle">
+    <Button
+      onClick={handleSignOut}
+      variant="outline"
+      leftSection={<IconLogout />}
+    >
       Sign out
     </Button>
   );
