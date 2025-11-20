@@ -14,6 +14,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
+  IconAlertCircle,
   IconLayoutDashboard,
   IconLeaf,
   IconMouse,
@@ -59,6 +60,11 @@ const NAV_LINKS: { label: string; leftSection: ReactNode; href: Route }[] = [
     label: "Tutorial",
     href: "/tutorial",
     leftSection: <IconMouse />,
+  },
+  {
+    label: "About",
+    href: "/about",
+    leftSection: <IconAlertCircle />,
   },
   {
     label: "Profile",
