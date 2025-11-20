@@ -151,7 +151,6 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
               label="First Name"
               placeholder="Enter your first name"
               rightSection={<IconUserFilled size={18} />}
-              withAsterisk
               disabled={mutation.isPending}
               {...form.getInputProps("firstName")}
               style={{ width: "100%" }}
@@ -160,7 +159,6 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
               label="Last Name"
               placeholder="Enter your last name"
               rightSection={<IconUserFilled size={18} />}
-              withAsterisk
               disabled={mutation.isPending}
               {...form.getInputProps("lastName")}
               style={{ width: "100%", marginTop: 12 }}

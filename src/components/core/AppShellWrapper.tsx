@@ -10,6 +10,7 @@ import {
   Burger,
   Group,
   NavLink,
+  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconLayoutDashboardFilled, IconUserFilled } from "@tabler/icons-react";
@@ -23,7 +24,7 @@ import UserAvatar from "@/features/auth/components/UserAvatar";
 
 interface AppShellWrapperProps extends Readonly<{ children: ReactNode }> {}
 
-const navLinks: { label: string; leftSection: ReactNode; href: Route }[] = [
+const NAV_LINKS: { label: string; leftSection: ReactNode; href: Route }[] = [
   {
     label: "Dashboard",
     href: "/dashboard",
@@ -67,18 +68,22 @@ const AppShellWrapper: React.FC<AppShellWrapperProps> = ({ children }) => {
       </AppShellHeader>
 
       <AppShellNavbar p="md">
-        {navLinks.map(({ href, label, leftSection }) => (
-          <NavLink
-            key={href}
-            href={href}
-            component={Link}
-            label={label}
-            leftSection={leftSection}
-            active={href === pathname}
-          />
-        ))}
+        <Stack justify="space-between" h="100%">
+          <Stack>
+            {NAV_LINKS.map(({ href, label, leftSection }) => (
+              <NavLink
+                key={href}
+                href={href}
+                component={Link}
+                label={label}
+                leftSection={leftSection}
+                active={href === pathname}
+              />
+            ))}
+          </Stack>
 
-        <SignOutButton />
+          <SignOutButton />
+        </Stack>
       </AppShellNavbar>
 
       <AppShellMain>{children}</AppShellMain>

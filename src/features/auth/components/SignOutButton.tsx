@@ -17,7 +17,7 @@ const SignOutButton = () => {
   };
 
   return (
-    <Button onClick={handleSignOut} radius="md" color="red">
+    <Button onClick={handleSignOut} color="gray" variant="subtle">
       Sign out
     </Button>
   );

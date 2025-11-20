@@ -27,8 +27,6 @@ export type SignInSchema = z.infer<typeof signInSchema>;
 
 export const signUpSchema = z
   .object({
-    firstName: z.string().min(1, "First name required"),
-    lastName: z.string().min(1, "Last name required"),
     email: z.email("Invalid email address"),
     phoneNumber: z.string().optional(),
     agree: z.boolean().refine((val) => val === true, {
@@ -48,8 +46,8 @@ export type NewPasswordSchema = z.infer<typeof newPasswordSchema>;
 
 export const editProfileInfoSchema = z.object({
   image: z.string().optional(),
-  firstName: z.string().min(1, "First name required"),
-  lastName: z.string().min(1, "Last name required"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
   phoneNumber: z.string().optional(),
   bio: z.string().optional(),
   dob: z.string().optional(),

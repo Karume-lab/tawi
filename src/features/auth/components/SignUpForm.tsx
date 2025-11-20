@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
-import { IconMailFilled, IconUserFilled } from "@tabler/icons-react";
+import { IconMailFilled } from "@tabler/icons-react";
 import { useMutation } from "@tanstack/react-query";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import Link from "next/link";
@@ -26,8 +26,6 @@ const SignUpForm = () => {
 
   const form = useForm<SignUpSchema>({
     initialValues: {
-      firstName: "",
-      lastName: "",
       email: "",
       phoneNumber: "",
       password: "",
@@ -42,7 +40,7 @@ const SignUpForm = () => {
       return authClient.signUp.email({
         email: values.email,
         password: values.password,
-        name: `${values.firstName} ${values.lastName}`,
+        name: "",
         callbackURL: "/dashboard",
       });
     },
@@ -70,28 +68,6 @@ const SignUpForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <Stack>
-        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md">
-          <TextInput
-            label="First Name"
-            placeholder="Enter your first name"
-            rightSection={<IconUserFilled size={18} />}
-            withAsterisk
-            disabled={mutation.isPending}
-            c="white"
-            {...form.getInputProps("firstName")}
-          />
-
-          <TextInput
-            label="Last Name"
-            placeholder="Enter your last name"
-            rightSection={<IconUserFilled size={18} />}
-            withAsterisk
-            disabled={mutation.isPending}
-            c="white"
-            {...form.getInputProps("lastName")}
-          />
-        </SimpleGrid>
-
         <TextInput
           label="Email"
           placeholder="Enter your email"
