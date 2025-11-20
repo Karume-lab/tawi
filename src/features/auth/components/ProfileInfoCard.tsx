@@ -4,7 +4,6 @@ import {
   ActionIcon,
   Box,
   Button,
-  Flex,
   Group,
   Skeleton,
   Stack,
@@ -190,14 +189,14 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
           {...form.getInputProps("dob")}
         />
 
-        <Flex justify="end" gap="md">
+        <Group justify="end" gap="md">
           <Button variant="outline" size="md" onClick={handleCancel}>
             Cancel
           </Button>
           <Button type="submit" size="md" loading={mutation.isPending}>
             Save
           </Button>
-        </Flex>
+        </Group>
       </Stack>
     </form>
   );
@@ -215,10 +214,10 @@ const ProfileInfoSkeleton = () => (
     <Skeleton height={40} mb={12} radius="sm" />
     <Skeleton height={80} mb={12} radius="sm" />
     <Skeleton height={40} mb={12} radius="sm" />
-    <Flex justify="end" gap="md">
+    <Group justify="end" gap="md">
       <Skeleton width={100} height={36} radius="sm" />
       <Skeleton width={100} height={36} radius="sm" />
-    </Flex>
+    </Group>
   </Stack>
 );
 

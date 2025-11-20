@@ -6,7 +6,6 @@ import {
   Button,
   Card,
   CardSection,
-  Flex,
   Group,
   Menu,
   MenuDropdown,
@@ -24,7 +23,7 @@ const LandingPageHeader = () => {
   return (
     <Card shadow="sm" withBorder m="md" radius="md">
       <CardSection p="xs">
-        <Flex
+        <Group
           align="center"
           justify="space-between"
           wrap="nowrap"
@@ -100,7 +99,7 @@ const LandingPageHeader = () => {
               </MenuDropdown>
             </Menu>
           </Group>
-        </Flex>
+        </Group>
       </CardSection>
     </Card>
   );

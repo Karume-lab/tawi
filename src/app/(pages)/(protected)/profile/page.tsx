@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Title } from "@mantine/core";
+import { Box, Group, Text, Title } from "@mantine/core";
 import { headers } from "next/headers";
 import ProfileInfoCard from "@/features/auth/components/ProfileInfoCard";
 import ViewProfileLink from "@/features/auth/components/ViewProfileLink";
@@ -11,7 +11,7 @@ const ProfilePage = async () => {
 
   return (
     <Box px={{ base: 20, md: 40, lg: 80, xl: 200 }} py={20}>
-      <Flex
+      <Group
         my="lg"
         align="flex-start"
         justify="space-between"
@@ -27,7 +27,7 @@ const ProfilePage = async () => {
         </Box>
 
         <ViewProfileLink id={session?.user.id} />
-      </Flex>
+      </Group>
 
       <ProfileInfoCard />
     </Box>
