@@ -65,7 +65,6 @@ const SignInForm = () => {
           label="Email"
           placeholder="Enter the email you used to create your account"
           rightSection={<IconMailFilled />}
-          c={"white"}
           withAsterisk
           disabled={mutation.isPending}
           {...form.getInputProps("email")}
@@ -74,7 +73,6 @@ const SignInForm = () => {
         <PasswordInput
           label="Password"
           placeholder="Enter your password"
-          c={"white"}
           withAsterisk
           disabled={mutation.isPending}
           {...form.getInputProps("password")}
@@ -82,18 +80,12 @@ const SignInForm = () => {
 
         <Checkbox
           label="Remember me"
-          c="white"
           {...form.getInputProps("rememberMe", { type: "checkbox" })}
         />
 
-        <Text c="white" ta={"left"} size="sm">
+        <Text ta={"left"} size="sm">
           Forgot your password?{" "}
-          <Anchor
-            component={Link}
-            href={"/reset-password"}
-            c="white"
-            underline="always"
-          >
+          <Anchor component={Link} href={"/reset-password"} underline="always">
             Reset
           </Anchor>
         </Text>

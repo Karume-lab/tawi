@@ -22,12 +22,9 @@ const ResetPasswordLinkSentAlert: React.FC<ResetPasswordLinkSentAlertProps> = ({
           radius="md"
           variant="filled"
           mt="md"
-          styles={{
-            root: { color: "white" },
-            title: { fontWeight: 600 },
-          }}
+          fw={600}
         >
-          <Text size="sm" mb="sm" c="white">
+          <Text size="sm" mb="sm">
             We've sent a password reset link to{" "}
             <Text span fw={600}>
               {email}
@@ -37,7 +34,7 @@ const ResetPasswordLinkSentAlert: React.FC<ResetPasswordLinkSentAlertProps> = ({
           </Text>
 
           <Group justify="flex-end" mt="sm">
-            <Button size="xs" variant="white" onClick={onBack} radius="md">
+            <Button size="xs" onClick={onBack} variant="white">
               Resend
             </Button>
           </Group>

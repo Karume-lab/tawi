@@ -65,11 +65,10 @@ const ResetPasswordForm = () => {
                 rightSection={<IconMailFilled />}
                 withAsterisk
                 disabled={mutation.isPending}
-                c="white"
                 {...form.getInputProps("email")}
               />
 
-              <Button type="submit" fullWidth loading={mutation.isPending}>
+              <Button type="submit" loading={mutation.isPending}>
                 Send Reset Link
               </Button>
             </Stack>

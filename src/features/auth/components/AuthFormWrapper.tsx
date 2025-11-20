@@ -54,7 +54,6 @@ const AuthFormWrapper: React.FC<AuthFormWrapperProps> = ({
       <Card
         p={{ base: "lg", md: 50 }}
         ta={"center"}
-        bg="primary.3"
         radius="sm"
         withBorder
         w={{
@@ -64,7 +63,7 @@ const AuthFormWrapper: React.FC<AuthFormWrapperProps> = ({
       >
         <Stack>
           <CardSection>
-            <Title c="white" className="responsiveTitle">
+            <Title c={"primary"} className="responsiveTitle">
               {title}
             </Title>
           </CardSection>
@@ -86,20 +85,20 @@ const AuthFormWrapper: React.FC<AuthFormWrapperProps> = ({
           <Divider
             label={<Text c="white">OR {footerActionTitle} WITH EMAIL</Text>}
           /> */}
-          <Box mah={{ lg: "60vh" }} mih={{ lg: 300 }} px={{ lg: 32, xl: 64 }}>
+          <Box
+            mah={{ lg: "60vh" }}
+            mih={{ lg: 300 }}
+            px={{ lg: 32, xl: 64 }}
+            ta={"left"}
+          >
             <Form />
           </Box>
         </Stack>
 
         <CardSection>
-          <Text c="white" mt="sm">
+          <Text mt="sm">
             {otherPage.title}{" "}
-            <Anchor
-              component={Link}
-              href={otherPage.href}
-              c="white"
-              underline="always"
-            >
+            <Anchor component={Link} href={otherPage.href} underline="always">
               {otherPage.actionTitle}
             </Anchor>
           </Text>

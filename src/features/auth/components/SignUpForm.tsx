@@ -74,7 +74,6 @@ const SignUpForm = () => {
           rightSection={<IconMailFilled size={18} />}
           withAsterisk
           disabled={mutation.isPending}
-          c="white"
           {...form.getInputProps("email")}
         />
 
@@ -84,7 +83,6 @@ const SignUpForm = () => {
             placeholder="Enter your password"
             withAsterisk
             disabled={mutation.isPending}
-            c="white"
             {...form.getInputProps("password")}
           />
 
@@ -93,7 +91,6 @@ const SignUpForm = () => {
             placeholder="Confirm your password"
             withAsterisk
             disabled={mutation.isPending}
-            c="white"
             {...form.getInputProps("confirmPassword")}
           />
         </SimpleGrid>
@@ -101,11 +98,10 @@ const SignUpForm = () => {
         <Box ta={"start"}>
           <Checkbox
             label="I have read and accept the terms and conditions"
-            c="white"
             checked={form.values.agree}
             {...form.getInputProps("agree", { type: "checkbox" })}
           />
-          <Text size="sm" c="white">
+          <Text size="sm">
             By checking this box, you confirm that you have carefully reviewed
             and agree to our{" "}
             <Anchor component={Link} href="/terms">
