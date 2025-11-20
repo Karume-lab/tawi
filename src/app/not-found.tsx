@@ -5,13 +5,13 @@ import {
   Card,
   Center,
   Container,
+  Flex,
   Image as MantineImage,
-  rem,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
-import { IconArrowNarrowLeft } from "@tabler/icons-react";
+import { IconChevronLeft } from "@tabler/icons-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import NotFoundIllustration from "~/public/core/not-found.svg";
@@ -22,13 +22,7 @@ const NotFound = () => {
   return (
     <Center h="100vh" bg="gray.0" px="sm">
       <Container size="sm" px={{ base: "sm", sm: "md" }}>
-        <Card
-          p={{ base: "lg", sm: "xl" }}
-          bg="white"
-          shadow="md"
-          radius="md"
-          withBorder
-        >
+        <Card p={{ base: "lg", sm: "xl" }} shadow="md" radius="md" withBorder>
           <Stack align="center" gap="md">
             <MantineImage
               component={Image}
@@ -38,30 +32,26 @@ const NotFound = () => {
               height={300}
               fit="contain"
             />
-            <Title
-              order={2}
-              ta="center"
-              fw={700}
-              c="primary"
-              fz={{ base: rem(24), sm: rem(32) }}
-            >
+            <Title order={2} ta="center" fw={700} c="primary">
               404 - Page Not Found
             </Title>
             <Text size="md" ta="center" c="gray.7" px={{ base: "sm", sm: 40 }}>
               Oops! The page you're looking for doesn't exist or has been moved.
             </Text>
+          </Stack>
+          <Flex justify="flex-start" mt="sm">
             <Button
               onClick={router.back}
               size="md"
               radius="md"
-              leftSection={<IconArrowNarrowLeft />}
+              leftSection={<IconChevronLeft />}
               mt="sm"
               variant="outline"
               color="primary"
             >
               Go Back
             </Button>
-          </Stack>
+          </Flex>
         </Card>
       </Container>
     </Center>

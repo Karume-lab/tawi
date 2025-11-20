@@ -1,7 +1,7 @@
 "use client";
 
 import { Anchor, Group, Text } from "@mantine/core";
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type React from "react";
 
@@ -14,7 +14,7 @@ const ViewProfileLink: React.FC<ViewProfileLinkProps> = ({ id }) => {
     <Anchor component={Link} href="/profile" as={`/profile/${id}`}>
       <Group gap={4}>
         <Text>View Profile</Text>
-        <IconArrowRight />
+        <IconChevronRight />
       </Group>
     </Anchor>
   );

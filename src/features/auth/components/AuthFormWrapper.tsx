@@ -19,10 +19,10 @@ import {
   Title,
 } from "@mantine/core";
 import {
-  IconArrowNarrowLeft,
   IconBrandFacebookFilled,
   IconBrandGoogleFilled,
   IconBrandInstagramFilled,
+  IconChevronLeft,
 } from "@tabler/icons-react";
 import type { Route } from "next";
 import Link from "next/link";
@@ -118,7 +118,7 @@ const AuthFormWrapper: React.FC<AuthFormWrapperProps> = ({
       >
         <Group justify="space-between">
           <Anchor href="/" component={Link}>
-            <Button leftSection={<IconArrowNarrowLeft />} variant="white">
+            <Button leftSection={<IconChevronLeft />} variant="white">
               Back to Website
             </Button>
           </Anchor>
