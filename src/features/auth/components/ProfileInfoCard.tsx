@@ -60,6 +60,7 @@ const ProfileInfoForm: React.FC<ProfileInforFormProps> = ({ data }) => {
     mutationFn: async (values: typeof form.values) => {
       return await authClient.updateUser({
         ...values,
+        name: `${values.firstName} ${values.lastName}`,
       });
     },
     onSuccess: () => {
